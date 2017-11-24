@@ -1,14 +1,43 @@
-import Header from './Components/header'
-import Footer from './Components/footer'
+import Header from './Components/header';
+import Footer from './Components/footer';
 import React, {Component} from 'react';
-
+import ProductList from './Components/productlist';
 class App extends Component{
+    
+    constructor(props)
+    {
+        super(props);
+        this.state = { products:[]}
+    }
+    
+
+    componentDidMount(){
+        fetch('https://api.randomuser.me/?nat=us,gb&results=5')
+        .then(response => response.json())
+        .then(parsedResponse => parsedResponse.results.map(user => (
+            {
+                name: `${user.name.first} ${user.name.last}`,
+                email : user.email,
+                thumbnail: user.picture.thumbnail
+            }
+        )))
+        .then(products => this.setState({products : products}))
+    }
+   
+
     render(){
         return(
-            <div>
+            <div className="Container">
+            
                 <Header />
-                   Burası app anasayfa
+                
+                  {/* App Layout Page -- Buraya routing yönetimi ekleyebiliriz. */}
+                
+                    <ProductList products={this.state.products} />
+                
+                
                 <Footer />
+         
             </div>
         )
     }
