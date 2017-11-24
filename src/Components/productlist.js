@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-
+import LoaderHOC from './HOC/LoaderHOC'
 class ProductList extends Component{
 
     render(){
@@ -24,4 +24,4 @@ class ProductList extends Component{
 }
 
 
-export default ProductList;
+export default LoaderHOC(ProductList);
