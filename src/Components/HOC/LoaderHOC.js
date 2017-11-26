@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './LoaderHOC.css';
 
+
 const isEmpty = (prop) => (
     prop === null ||
     prop === undefined ||
