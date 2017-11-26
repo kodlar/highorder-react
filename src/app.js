@@ -2,6 +2,7 @@ import Header from './Components/header';
 import Footer from './Components/footer';
 import React, {Component} from 'react';
 import ProductList from './Components/productlist';
+import {sleeper} from './Components/utility'
 class App extends Component{
     
     constructor(props)
@@ -14,6 +15,7 @@ class App extends Component{
     componentDidMount(){
         fetch('https://api.randomuser.me/?nat=us,gb&results=5')
         .then(response => response.json())
+       
         .then(parsedResponse => parsedResponse.results.map(user => (
             {
                 name: `${user.name.first} ${user.name.last}`,
@@ -21,6 +23,7 @@ class App extends Component{
                 thumbnail: user.picture.thumbnail
             }
         )))
+        .then(sleeper(3000))
         .then(products => this.setState({products : products}))
     }
    

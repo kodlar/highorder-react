@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import LoaderHOC from './HOC/LoaderHOC'
+import './productlist.css'
 
 class ProductList extends Component{
 
@@ -12,7 +13,7 @@ class ProductList extends Component{
             {filteredProducts.map(
               (product) => <li key={product.email}>
                 <img src={product.thumbnail} role="presentation" />
-                <div className="contactData">
+                <div className="contactData test">
                   <strong>{product.name}</strong><br/><small>{product.email}</small>
                 </div>
               </li>
@@ -23,6 +24,5 @@ class ProductList extends Component{
         );
     }
 }
-
 
 export default LoaderHOC(ProductList);

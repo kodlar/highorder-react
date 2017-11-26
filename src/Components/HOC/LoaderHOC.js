@@ -13,7 +13,7 @@ const isEmpty = (prop) => (
 const LoaderHOC = (WrappedComponent) => {
     return class LoaderHoc extends Component{
             render(){
-               return (this.props.products.lenght === 0 ? <div className="loader"></div> : <WrappedComponent {...this.props}/>)
+               return (this.props.products.lenght === 0 ? <div className="loader test"></div> : <WrappedComponent {...this.props}/>)
             }
     }
 }
