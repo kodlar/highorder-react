@@ -23,7 +23,7 @@ class App extends Component{
                 thumbnail: user.picture.thumbnail
             }
         )))
-        .then(sleeper(10000))
+       // .then(sleeper(10000))
         .then(products => this.setState({products : products}))
     }
    
