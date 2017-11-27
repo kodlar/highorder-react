@@ -6,6 +6,8 @@ https://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/
 
 Source of Galaxy
 https://github.com/cassiozen/ReactCasts/tree/master/episode1
+videosu
+https://www.youtube.com/watch?v=LTunyI2Oyzw
 
 cssleri çözümlemek için
 npm install --save-dev css-loader style-loader yüklüyoruz

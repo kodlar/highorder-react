@@ -34667,9 +34667,9 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _productlist = __webpack_require__(153);
+var _list = __webpack_require__(153);
 
-var _productlist2 = _interopRequireDefault(_productlist);
+var _list2 = _interopRequireDefault(_list);
 
 var _utility = __webpack_require__(161);
 
@@ -34708,7 +34708,7 @@ var App = function (_Component) {
                         thumbnail: user.picture.thumbnail
                     };
                 });
-            }).then((0, _utility.sleeper)(3000)).then(function (products) {
+            }).then((0, _utility.sleeper)(10000)).then(function (products) {
                 return _this2.setState({ products: products });
             });
         }
@@ -34719,7 +34719,7 @@ var App = function (_Component) {
                 'div',
                 { className: 'Container' },
                 _react2.default.createElement(_header2.default, null),
-                _react2.default.createElement(_productlist2.default, { products: this.state.products }),
+                _react2.default.createElement(_list2.default, { products: this.state.products }),
                 _react2.default.createElement(_footer2.default, null)
             );
         }
@@ -34868,7 +34868,7 @@ var Footer = function (_Component) {
             var tarih = (0, _moment2.default)().format('dddd');
             return _react2.default.createElement(
                 'footer',
-                { 'class': 'footer' },
+                { className: 'footer' },
                 'Tarih: ',
                 tarih
             );
@@ -35260,7 +35260,7 @@ exports.default = (0, _LoaderHOC2.default)(ProductList);
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+   value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -35279,29 +35279,30 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var isEmpty = function isEmpty(prop) {
-    return prop === null || prop === undefined || prop.hasOwnProperty('length') && prop.length === 0 || prop.constructor === Object && Object.keys(prop).length === 0;
-};
-
 var LoaderHOC = function LoaderHOC(WrappedComponent) {
-    return function (_Component) {
-        _inherits(LoaderHoc, _Component);
+   return function (_Component) {
+      _inherits(LoaderHOC, _Component);
 
-        function LoaderHoc() {
-            _classCallCheck(this, LoaderHoc);
+      function LoaderHOC() {
+         _classCallCheck(this, LoaderHOC);
 
-            return _possibleConstructorReturn(this, (LoaderHoc.__proto__ || Object.getPrototypeOf(LoaderHoc)).apply(this, arguments));
-        }
+         return _possibleConstructorReturn(this, (LoaderHOC.__proto__ || Object.getPrototypeOf(LoaderHOC)).apply(this, arguments));
+      }
 
-        _createClass(LoaderHoc, [{
-            key: 'render',
-            value: function render() {
-                return this.props.products.lenght === 0 ? _react2.default.createElement('div', { className: 'loader logo' }) : _react2.default.createElement(WrappedComponent, this.props);
-            }
-        }]);
+      _createClass(LoaderHOC, [{
+         key: 'render',
+         value: function render() {
+            console.log('deger:', this.props.products.length);
+            return this.props.products.length === 0 ? _react2.default.createElement(
+               'div',
+               { className: 'loadergif' },
+               'Y\xFCkleniyor...'
+            ) : _react2.default.createElement(WrappedComponent, this.props);
+         }
+      }]);
 
-        return LoaderHoc;
-    }(_react.Component);
+      return LoaderHOC;
+   }(_react.Component);
 };
 
 exports.default = LoaderHOC;
@@ -35327,8 +35328,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js!./LoaderHOC.css", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js!./LoaderHOC.css");
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js!./LoaderHOC.css", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js!./LoaderHOC.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -35346,7 +35347,7 @@ exports = module.exports = __webpack_require__(133)(undefined);
 
 
 // module
-exports.push([module.i, ".test{\r\n  background-color: tomato;\r\n  padding: 30px;\r\n}\r\n\r\n.logo {\r\n  display: block;\r\n  text-indent: -9999px;\r\n  width: 100px;\r\n  height: 82px;\r\n  background: url(" + __webpack_require__(157) + ");\r\n  background-size: 100px 82px;\r\n}\r\n\r\n\r\n.loader {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translateX(-50%) translateY(-50%);\r\n    -ms-transform: translateX(-50%) translateY(-50%);\r\n    transform: translateX(-50%) translateY(-50%);\r\n  }\r\n  \r\n  \r\n  .loader:before {\r\n    position: absolute;\r\n    content: '';\r\n    top: 0%;\r\n    left: 50%;\r\n    width: 100%;\r\n    height: 100%;\r\n    border-radius: 500rem;\r\n    border: 0.2em solid rgba(0, 0, 0, 0.1);\r\n  }\r\n\r\n  \r\n  .loader:after {\r\n    position: absolute;\r\n    content: '';\r\n    top: 0%;\r\n    left: 50%;\r\n    width: 100%;\r\n    height: 100%;\r\n    animation: loader 0.6s linear;\r\n    animation-iteration-count: infinite;\r\n    border-radius: 500rem;\r\n    border-color: #767676 transparent transparent;\r\n    border-style: solid;\r\n    border-width: 0.2em;\r\n    box-shadow: 0px 0px 0px 1px transparent;\r\n  }\r\n  \r\n\r\n  \r\n  @-webkit-keyframes loader {\r\n    from {\r\n      -webkit-transform: rotate(0deg);\r\n      transform: rotate(0deg);\r\n    }\r\n  \r\n    to {\r\n      -webkit-transform: rotate(360deg);\r\n      transform: rotate(360deg);\r\n    }\r\n  }\r\n  \r\n  @keyframes loader {\r\n    from {\r\n      -webkit-transform: rotate(0deg);\r\n      transform: rotate(0deg);\r\n    }\r\n  \r\n    to {\r\n      -webkit-transform: rotate(360deg);\r\n      transform: rotate(360deg);\r\n    }\r\n  }\r\n  \r\n  .loader:before,\r\n  .loader:after {\r\n    width: 2.28571429rem;\r\n    height: 2.28571429rem;\r\n    margin: 0em;\r\n  }\r\n  ", ""]);
+exports.push([module.i, ".test{\n  background-color: tomato;\n  padding: 30px;\n}\n\n.loadergif {\n  display: block;\n  text-indent: -9999px;\n  width: 100px;\n  height: 82px;\n  background-color: tomato;\n  background: url(" + __webpack_require__(157) + ");\n  background-size: 100px 82px;\n}\n\n\n.loader {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translateX(-50%) translateY(-50%);\n    -ms-transform: translateX(-50%) translateY(-50%);\n    transform: translateX(-50%) translateY(-50%);\n  }\n  \n  \n  .loader:before {\n    position: absolute;\n    content: '';\n    top: 0%;\n    left: 50%;\n    width: 100%;\n    height: 100%;\n    border-radius: 500rem;\n    border: 0.2em solid rgba(0, 0, 0, 0.1);\n  }\n\n  \n  .loader:after {\n    position: absolute;\n    content: '';\n    top: 0%;\n    left: 50%;\n    width: 100%;\n    height: 100%;\n    animation: loader 0.6s linear;\n    animation-iteration-count: infinite;\n    border-radius: 500rem;\n    border-color: #767676 transparent transparent;\n    border-style: solid;\n    border-width: 0.2em;\n    box-shadow: 0px 0px 0px 1px transparent;\n  }\n  \n\n  \n  @-webkit-keyframes loader {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n  \n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  \n  @keyframes loader {\n    from {\n      -webkit-transform: rotate(0deg);\n      transform: rotate(0deg);\n    }\n  \n    to {\n      -webkit-transform: rotate(360deg);\n      transform: rotate(360deg);\n    }\n  }\n  \n  .loader:before,\n  .loader:after {\n    width: 2.28571429rem;\n    height: 2.28571429rem;\n    margin: 0em;\n  }\n  ", ""]);
 
 // exports
 
@@ -35473,8 +35474,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./productlist.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./productlist.css");
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js!./list.css", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js!./list.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -35492,7 +35493,7 @@ exports = module.exports = __webpack_require__(133)(undefined);
 
 
 // module
-exports.push([module.i, ".test{\r\n    background-color: red;\r\n    padding: 30px;\r\n  }", ""]);
+exports.push([module.i, ".test{\n    background-color: red;\n    padding: 30px;\n  }", ""]);
 
 // exports
 
