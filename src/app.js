@@ -1,8 +1,8 @@
-import Header from './Components/header';
-import Footer from './Components/footer';
+import Header from './Components/Common/header';
+import Footer from './Components/Common/footer';
 import React, {Component} from 'react';
-import ProductList from './Components/productlist';
-import {sleeper} from './Components/utility'
+import ProductList from './Components/Widgets/Product/list';
+import {sleeper} from './Components/Library/utility'
 class App extends Component{
     
     constructor(props)
@@ -23,7 +23,7 @@ class App extends Component{
                 thumbnail: user.picture.thumbnail
             }
         )))
-        .then(sleeper(3000))
+        .then(sleeper(10000))
         .then(products => this.setState({products : products}))
     }
    

@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
-import LoaderHOC from './HOC/LoaderHOC'
-import './productlist.css'
+import LoaderHOC from '../../HOC/Loader/LoaderHOC'
+import './list.css'
 
 class ProductList extends Component{
 

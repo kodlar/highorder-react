@@ -7,7 +7,7 @@ class Footer extends Component{
     }
     render(){
         const tarih = moment().format('dddd');
-        return(<footer class="footer">Tarih: {tarih}</footer>)
+        return(<footer className="footer">Tarih: {tarih}</footer>)
     }
 }
 

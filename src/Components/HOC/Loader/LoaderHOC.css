@@ -2,6 +2,18 @@
   background-color: tomato;
   padding: 30px;
 }
+
+.loadergif {
+  display: block;
+  text-indent: -9999px;
+  width: 100px;
+  height: 82px;
+  background-color: tomato;
+  background: url(./loading-gif-transparent-4.gif);
+  background-size: 100px 82px;
+}
+
+
 .loader {
     position: absolute;
     top: 50%;
