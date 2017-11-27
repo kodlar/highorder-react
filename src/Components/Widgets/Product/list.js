@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 import LoaderHOC from '../../HOC/Loader/LoaderHOC'
 import './list.css'
-//@LoaderHOC
+
+@LoaderHOC('products')
 class ProductList extends Component{
 
     render(){
@@ -24,5 +25,5 @@ class ProductList extends Component{
         );
     }
 }
-
-export default LoaderHOC('products')(ProductList);
+export default ProductList;
+//export default LoaderHOC('products')(ProductList);
