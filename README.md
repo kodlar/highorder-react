@@ -49,7 +49,8 @@ https://stackoverflow.com/questions/33801311/webpack-babel-6-es6-decorators
 bu yazıda decorator patterni ne işe yarar onu anlatıyor
 https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841
 
-3-import üzerinde eslint hata veriyor the keyword import is reserved hatası alıyorum
+3-import üzerinde eslint hata veriyor the keyword import is reserved hatası alıyorum bu adresten
+https://github.com/babel/babel-eslint aşağıdaki kodu çalıştırdım.
 {code}
 npm install eslint@3.x babel-eslint@7 --save-dev
 {code}
