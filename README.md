@@ -20,6 +20,11 @@ https://stackoverflow.com/questions/38956121/how-to-add-delay-to-promise-inside-
 fonksiyon exportları için
 http://2ality.com/2014/09/es6-modules-final.html
 
+carried function : get single parameter and receive single parameter at one a time
+o yüzden kodu reusable yapmak için loaderhoc üzerinde single parametre ekliyoruz.
+
+
+
 @Hatalar
 
 1-Eğer böyle bir hata alıyorsanız https://github.com/shakacode/bootstrap-loader/issues/230
@@ -65,3 +70,4 @@ daha sonra root'a .eslintrc dosyası ekledim içine
 {code}
 ekledim daha sonra visual studio code baştan başlattım. Çünkü import hataları gelmeye devam ediyor
 https://github.com/Microsoft/vscode/issues/7113 bu adresten konu hakkında açılan issue baktım.
+
