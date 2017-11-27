@@ -35,11 +35,13 @@ o yüzden kodu reusable yapmak için loaderhoc üzerinde single parametre ekliyo
   https://github.com/webpack-contrib/file-loader
 
 2-@decorator patterni kullanmak için 
+```
 npm i --save-dev babel-plugin-transform-decorators-legacy 
+```
 daha sonra list.js class isminin üzerine bir attribute olarak
 @LoaderHOC ilgili sınıfı verdik. Bu arada 
 babelrc içine plugin eklendi
-{code}
+```
 {
     "presets": [
         "es2015","react"
@@ -48,7 +50,7 @@ babelrc içine plugin eklendi
         ["transform-decorators-legacy"]
       ]
 }
-{code}
+```
 ayrıca bu adreste açıklaması var
 https://stackoverflow.com/questions/33801311/webpack-babel-6-es6-decorators
 bu yazıda decorator patterni ne işe yarar onu anlatıyor
@@ -56,18 +58,18 @@ https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841
 
 3-import üzerinde eslint hata veriyor the keyword import is reserved hatası alıyorum bu adresten
 https://github.com/babel/babel-eslint aşağıdaki kodu çalıştırdım.
-{code}
+```ruby
 npm install eslint@3.x babel-eslint@7 --save-dev
-{code}
+```
 daha sonra root'a .eslintrc dosyası ekledim içine
-{code}
+```node
 {
     "parser": "babel-eslint",
     "rules": {
       "strict": 0
     }
 }
-{code}
+```
 ekledim daha sonra visual studio code baştan başlattım. Çünkü import hataları gelmeye devam ediyor
 https://github.com/Microsoft/vscode/issues/7113 bu adresten konu hakkında açılan issue baktım.
 
