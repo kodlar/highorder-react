@@ -20,8 +20,10 @@ http://2ality.com/2014/09/es6-modules-final.html
 
 @Hatalar
 
-Eğer böyle bir hata alıyorsanız https://github.com/shakacode/bootstrap-loader/issues/230
-Çözüm önerisini buradan buldum https://github.com/postcss/postcss-loader/issues/160
-webpack.config.js üzerine file-loader yüklüyoruz
-Açıklamalar
-https://github.com/webpack-contrib/file-loader
+1-Eğer böyle bir hata alıyorsanız https://github.com/shakacode/bootstrap-loader/issues/230
+  Çözüm önerisini buradan buldum https://github.com/postcss/postcss-loader/issues/160
+  webpack.config.js üzerine file-loader yüklüyoruz
+  
+  Açıklamalar
+  https://github.com/webpack-contrib/file-loader
+
